@@ -1,5 +1,4 @@
 from tkinter import *
-import tkinter as tk 
 from tkinter.ttk import Notebook
 import asyncio
 import threading
@@ -13,7 +12,7 @@ import time
 Names = ["Total", "Used", "Free"]
 Names_ = ["File type", "Created", "File size"]
 
-class App(tk.Tk):
+class App(Tk):
          
          _stop_update_ = False
          _flag_ = True
@@ -124,10 +123,10 @@ class App(tk.Tk):
         
          def disk_info(self):
     
-           self.text1 = tk.StringVar()
-           self.text2 = tk.StringVar()
-           self.text3 = tk.StringVar()
-           self.text4 = tk.StringVar()
+           self.text1 = StringVar()
+           self.text2 = StringVar()
+           self.text3 = StringVar()
+           self.text4 = StringVar()
            self.text4.set("Info about of count of memory")
            L = Label(self.frame5, textvariable=self.text1, anchor="center")
            L.place(x=79, y=50)
@@ -155,7 +154,7 @@ class App(tk.Tk):
                      self.text3.set(data[2])
                    
                   else:
-                   #pass
+                
                      if not lock_.locked():
                         lock_.acquire()
 
@@ -362,10 +361,10 @@ class App(tk.Tk):
                self.bu = Button(self.frame4, text="select file to show his info", command=self.show_info)
                self.bu.place(x=81, y=113)
         
-               self.t1 = tk.StringVar()
-               self.t2 = tk.StringVar()
-               self.t3 = tk.StringVar()
-               self.t4 = tk.StringVar()
+               self.t1 = StringVar()
+               self.t2 = StringVar()
+               self.t3 = StringVar()
+               self.t4 = StringVar()
             
                self.n1 = Label(self.frame4, textvariable=self.t1, anchor="center")
                self.n2 = Label(self.frame4, textvariable=self.t2, anchor="center")
